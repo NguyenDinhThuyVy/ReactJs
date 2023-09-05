@@ -1,0 +1,4 @@
+/**
+ * Destructuring
+ */
+//  Destructuring với object
