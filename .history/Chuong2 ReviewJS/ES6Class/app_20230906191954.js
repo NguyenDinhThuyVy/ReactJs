@@ -5,7 +5,7 @@ function Cat(name, color, type) {
 }
 // Thêm methods
 Cat.prototype.meow = function () {
-  console.log(`${this.name} meows: meow meow meow!`);
+  console.log(`${name} meows: meow meow meow!`);
 };
 
 // Khởi tạo 1 instance object

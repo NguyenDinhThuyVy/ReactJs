@@ -3,9 +3,9 @@ function Cat(name, color, type) {
   this.color = color;
   this.type = type;
 }
-// Thêm methods
-Cat.prototype.meow = function () {
-  console.log(`${this.name} meows: meow meow meow!`);
+// Thêm method
+Cat.prototype.meow = () => {
+  console.log(`${Cat.name} meows: meow meow meow!`);
 };
 
 // Khởi tạo 1 instance object

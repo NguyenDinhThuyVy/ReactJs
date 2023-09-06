@@ -4,7 +4,7 @@ function Cat(name, color, type) {
   this.type = type;
 }
 // Thêm methods
-Cat.prototype.meow = function () {
+Cat.prototype.meow = () => {
   console.log(`${this.name} meows: meow meow meow!`);
 };
 

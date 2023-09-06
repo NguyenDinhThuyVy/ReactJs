@@ -3,7 +3,7 @@ function Cat(name, color, type) {
   this.color = color;
   this.type = type;
 }
-// Thêm methods
+// Thêm method
 Cat.prototype.meow = function () {
   console.log(`${this.name} meows: meow meow meow!`);
 };
