@@ -1,7 +1,7 @@
 // async callback thông thường
-// setTimeout(() => {
-//   console.log("hello");
-// }, 1000);
+setTimeout(() => {
+  console.log("hello");
+}, 1000);
 
 // chuyển thành promise
 // const p = () =>

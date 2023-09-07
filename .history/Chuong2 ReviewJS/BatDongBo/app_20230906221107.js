@@ -1,7 +1,7 @@
 // async callback thông thường
-// setTimeout(() => {
-//   console.log("hello");
-// }, 1000);
+setTimeout(() => {
+  console.log("hello");
+}, 1000);
 
 // chuyển thành promise
 // const p = () =>
@@ -33,7 +33,8 @@ const p = () =>
       resolve("hello");
     }, 1000);
   });
-(async () => {
+
+const handle = async () => {
   try {
     const value = await p();
     console.log(value);
@@ -43,4 +44,6 @@ const p = () =>
     console.log("Finish!");
   }
   console.log("Chạy cuối cùng");
-})();
+};
+
+handle();
