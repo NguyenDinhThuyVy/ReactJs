@@ -183,7 +183,3 @@ class Persons {
 }
 const alex = new Persons('zyzy',20)
 alex.age
-
-class Person1{
-  constructor(public name:string, public age:number){}
-}

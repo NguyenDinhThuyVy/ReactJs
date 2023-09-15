@@ -178,12 +178,8 @@ class Persons {
     this.age = age;
   }
   handle(){
-  let value = this.money
+    this.money =100
   }
 }
 const alex = new Persons('zyzy',20)
 alex.age
-
-class Person1{
-  constructor(public name:string, public age:number){}
-}

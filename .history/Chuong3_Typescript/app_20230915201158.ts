@@ -170,20 +170,11 @@ handleClick<string>('100')
  * Class
  */
 class Persons {
-  private name:string
+   public name:string
   age:number
-  readonly money:number = 40
   constructor(name:string , age:number){
     this.name = name;
     this.age = age;
   }
-  handle(){
-  let value = this.money
-  }
 }
-const alex = new Persons('zyzy',20)
-alex.age
-
-class Person1{
-  constructor(public name:string, public age:number){}
-}
+const alex = new Persons('zyzy','20')
