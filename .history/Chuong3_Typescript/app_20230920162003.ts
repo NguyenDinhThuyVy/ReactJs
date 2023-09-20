@@ -74,9 +74,6 @@ let people:{
 people.push(
   {name : 'zyzy',
    age :20,
-  },{
-    name : 'hehe',
-    age :20,
   },
 )
 

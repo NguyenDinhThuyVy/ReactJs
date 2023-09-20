@@ -75,7 +75,7 @@ people.push(
   {name : 'zyzy',
    age :20,
   },{
-    name : 'hehe',
+    name : 'zyzy',
     age :20,
   },
 )
