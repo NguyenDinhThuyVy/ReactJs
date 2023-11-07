@@ -62,7 +62,6 @@
 const http = axios.create({
   baseURL: "https://reqres.in/api",
 });
-
 http.interceptors.request.use(
   (config) => {
     console.log(config);
@@ -72,17 +71,6 @@ http.interceptors.request.use(
     return Promise.reject(error);
   }
 );
-
-http.interceptors.response.use(
-  (config) => {
-    console.log(config);
-    return config.data.data;
-  },
-  (error) => {
-    return Promise.reject(error);
-  }
-);
-
 http
   .get("/users/2")
   .then((res) => {

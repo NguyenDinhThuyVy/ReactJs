@@ -34,58 +34,17 @@
 //     console.log("Loi", error);
 //   });
 
-// axios
-//   .delete("https://reqres.in/api/users/2")
-//   .then((res) => {
-//     console.log(res);
-//   })
-//   .catch((error) => {
-//     console.warn(error);
-//   });
-
-// axios({
-//   method: "post",
-//   baseURL: "https://reqres.in/api",
-//   url: "/users/2",
-//   data: {
-//     firstName: "Fred",
-//     lastName: "Flintstone",
-//   },
-// })
-//   .then((res) => {
-//     console.log(res);
-//   })
-//   .catch((error) => {
-//     console.warn(error);
-//   });
-
-const http = axios.create({
+axios({
+  method: "post",
   baseURL: "https://reqres.in/api",
-});
-
-http.interceptors.request.use(
-  (config) => {
-    console.log(config);
-    return config;
-  },
-  (error) => {
-    return Promise.reject(error);
-  }
-);
-
-http.interceptors.response.use(
-  (config) => {
-    console.log(config);
-    return config.data.data;
-  },
-  (error) => {
-    return Promise.reject(error);
-  }
-);
-
-http
-  .get("/users/2")
+  url: "/users",
+})
   .then((res) => {
+    //    let html = "";
+    // res.data.forEach((item) => {
+    //   html += `<div>${item.first_name} ${item.last_name}</div>`;
+    // });
+    // document.getElementById("result").innerHTML = html;
     console.log(res);
   })
   .catch((error) => {

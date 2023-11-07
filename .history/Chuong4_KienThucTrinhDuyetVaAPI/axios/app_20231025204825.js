@@ -63,20 +63,21 @@ const http = axios.create({
   baseURL: "https://reqres.in/api",
 });
 
-http.interceptors.request.use(
-  (config) => {
-    console.log(config);
-    return config;
-  },
-  (error) => {
-    return Promise.reject(error);
-  }
-);
+// http.interceptors.request.use(
+//   (config) => {
+//     console.log(config);
+//     config.headers.Timeout = 100;
+//     return config;
+//   },
+//   (error) => {
+//     return Promise.reject(error);
+//   }
+// );
 
 http.interceptors.response.use(
   (config) => {
     console.log(config);
-    return config.data.data;
+    return config;
   },
   (error) => {
     return Promise.reject(error);

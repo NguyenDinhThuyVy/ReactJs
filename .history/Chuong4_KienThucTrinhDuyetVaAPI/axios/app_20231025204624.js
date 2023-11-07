@@ -66,17 +66,8 @@ const http = axios.create({
 http.interceptors.request.use(
   (config) => {
     console.log(config);
+    config.headers.Timeout = 100;
     return config;
-  },
-  (error) => {
-    return Promise.reject(error);
-  }
-);
-
-http.interceptors.response.use(
-  (config) => {
-    console.log(config);
-    return config.data.data;
   },
   (error) => {
     return Promise.reject(error);
