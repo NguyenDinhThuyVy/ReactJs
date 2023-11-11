@@ -8,6 +8,7 @@ console.log("path.resolve(__dirname, 'dist')", path.resolve(__dirname, "dist"));
 
 module.exports = (env) => {
   const isDevelopment = Boolean(env.development);
+
   return {
     mode: isDevelopment ? "development" : "production",
     entry: {

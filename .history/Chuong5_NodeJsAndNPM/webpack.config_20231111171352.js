@@ -8,7 +8,8 @@ console.log("path.resolve(__dirname, 'dist')", path.resolve(__dirname, "dist"));
 
 module.exports = (env) => {
   const isDevelopment = Boolean(env.development);
-  return {
+
+  return {  console.log(isDevelopment);
     mode: isDevelopment ? "development" : "production",
     entry: {
       app: path.resolve("src/index.js"),
