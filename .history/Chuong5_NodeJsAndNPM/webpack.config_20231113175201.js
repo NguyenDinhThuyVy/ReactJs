@@ -9,21 +9,7 @@ console.log("path.resolve()", path.resolve());
 console.log("path.resolve(__dirname, 'dist')", path.resolve(__dirname, "dist"));
 
 module.exports = (env) => {
-  const basePlugins = [
-    new MiniCssExtractPlugin({
-      filename: "[name].[contenthash].css",
-    }),
-    new HtmlWebpackPlugin({
-      title: "Webpack App",
-      filename: "index.html",
-      template: "src/template.html",
-    }),
-  ];
-
   const isDevelopment = Boolean(env.development);
-  const plugins = isDevelopment
-    ? basePlugins
-    : [...basePlugins, new BundleAnalyzerPlugin()];
   return {
     mode: isDevelopment ? "development" : "production",
     entry: {

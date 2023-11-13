@@ -9,6 +9,7 @@ console.log("path.resolve()", path.resolve());
 console.log("path.resolve(__dirname, 'dist')", path.resolve(__dirname, "dist"));
 
 module.exports = (env) => {
+  const isDevelopment = Boolean(env.development);
   const basePlugins = [
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash].css",
