@@ -14,9 +14,14 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 //   </div>
 // );
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  {
+    /* <React.StrictMode> */
+  }
+  {
+    /* <App /> */
+  }
+  // </React.StrictMode>
+
 );
 
 // setInterval(tick, 1000);

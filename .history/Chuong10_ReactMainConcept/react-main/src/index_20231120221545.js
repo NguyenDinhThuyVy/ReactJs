@@ -6,6 +6,13 @@ import reportWebVitals from "./reportWebVitals";
 import Welcome from "./Welcome";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+{
+  /* <React.StrictMode> */
+}
+{
+  /* <App /> */
+}
+// </React.StrictMode>
 // const element = (
 //   <div>
 //     <Welcome name="zyzy" class="AhihiS" />
@@ -13,11 +20,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 //     <Welcome name="sdskdsd" class="hehe" />
 //   </div>
 // );
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+root.render(element);
 
 // setInterval(tick, 1000);
 // If you want to start measuring performance in your app, pass a function

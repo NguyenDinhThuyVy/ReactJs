@@ -13,11 +13,15 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 //     <Welcome name="sdskdsd" class="hehe" />
 //   </div>
 // );
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+root
+  .render
+
+  /* <React.StrictMode> */
+
+  /* <App /> */
+
+  // </React.StrictMode>
+  ();
 
 // setInterval(tick, 1000);
 // If you want to start measuring performance in your app, pass a function
