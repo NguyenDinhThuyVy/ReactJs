@@ -10,7 +10,6 @@ const fetchApi = () => {
 };
 export default class Clock extends React.Component {
   constructor(props) {
-    console.log("constructor");
     super(props);
     this.state = {
       time: {
@@ -27,7 +26,6 @@ export default class Clock extends React.Component {
   }
 
   componentDidMount() {
-    console.log("componentDidMount");
     const seconds = document.getElementById("seconds");
     console.log(seconds);
     fetchApi().then((res) =>
@@ -39,13 +37,6 @@ export default class Clock extends React.Component {
   }
   componentDidUpdate() {
     console.log("componentDidUpdate");
-    if (this.state.darkMode) {
-      const value = document.querySelector("input").value;
-      console.log("Value in Input", value);
-    }
-  }
-  componentWillUnmount() {
-    console.log("componentWillUnmount");
   }
   getTime() {
     const newState = {
@@ -66,7 +57,7 @@ export default class Clock extends React.Component {
     }));
   };
   render() {
-    console.log(" render");
+    console.log(this.state);
     return (
       <div>
         <h1>Hello, world!</h1>
@@ -74,9 +65,6 @@ export default class Clock extends React.Component {
         <h3 id="seconds">Seconds: {this.state.seconds.created}</h3>
         <button onClick={this.getTime}>Get Time</button>
         <button onClick={this.toggleDarkMode}>Toggle</button>
-        {this.state.darkMode && (
-          <input value={this.state.darkMode} type="text" />
-        )}
       </div>
     );
   }

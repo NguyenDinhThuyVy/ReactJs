@@ -10,7 +10,6 @@ const fetchApi = () => {
 };
 export default class Clock extends React.Component {
   constructor(props) {
-    console.log("constructor");
     super(props);
     this.state = {
       time: {
@@ -20,14 +19,12 @@ export default class Clock extends React.Component {
         created: new Date().getSeconds(),
       },
       lists: [],
-      darkMode: false,
     };
     this.date = "22/10/2023";
     this.getTime = this.getTime.bind(this);
   }
 
   componentDidMount() {
-    console.log("componentDidMount");
     const seconds = document.getElementById("seconds");
     console.log(seconds);
     fetchApi().then((res) =>
@@ -39,13 +36,6 @@ export default class Clock extends React.Component {
   }
   componentDidUpdate() {
     console.log("componentDidUpdate");
-    if (this.state.darkMode) {
-      const value = document.querySelector("input").value;
-      console.log("Value in Input", value);
-    }
-  }
-  componentWillUnmount() {
-    console.log("componentWillUnmount");
   }
   getTime() {
     const newState = {
@@ -59,24 +49,15 @@ export default class Clock extends React.Component {
     };
     this.setState(newState);
   }
-  toggleDarkMode = () => {
-    this.setState((prevState) => ({
-      ...prevState,
-      darkMode: !prevState.darkMode,
-    }));
-  };
+
   render() {
-    console.log(" render");
+    console.log(this.state);
     return (
       <div>
         <h1>Hello, world!</h1>
         <h2>It is {this.state.time.created}.</h2>
         <h3 id="seconds">Seconds: {this.state.seconds.created}</h3>
         <button onClick={this.getTime}>Get Time</button>
-        <button onClick={this.toggleDarkMode}>Toggle</button>
-        {this.state.darkMode && (
-          <input value={this.state.darkMode} type="text" />
-        )}
       </div>
     );
   }

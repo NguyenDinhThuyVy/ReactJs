@@ -7,7 +7,7 @@ function App() {
   const [visible, setVisible] = useState(true);
   return (
     <div className="App">
-      <button onClick={() => setVisible(false)}>Hide Clock</button>
+      <button>Hide Clock</button>
       {visible && <Clock />}
     </div>
   );

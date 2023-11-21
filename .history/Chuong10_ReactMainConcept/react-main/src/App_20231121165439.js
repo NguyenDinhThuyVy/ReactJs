@@ -5,12 +5,7 @@ import Clock from "./Clock";
 
 function App() {
   const [visible, setVisible] = useState(true);
-  return (
-    <div className="App">
-      <button onClick={() => setVisible(false)}>Hide Clock</button>
-      {visible && <Clock />}
-    </div>
-  );
+  return <div className="App">{visible && <Clock />}</div>;
 }
 
 export default App;

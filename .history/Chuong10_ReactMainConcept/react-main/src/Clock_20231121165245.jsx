@@ -10,7 +10,7 @@ const fetchApi = () => {
 };
 export default class Clock extends React.Component {
   constructor(props) {
-    console.log("constructor");
+    console.log(" constructor");
     super(props);
     this.state = {
       time: {
