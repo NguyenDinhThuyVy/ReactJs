@@ -11,15 +11,13 @@ function App() {
     <div className="App">
       {/* <button onClick={() => setVisible(false)}>Hide Clock</button>
       {visible && <Clock />} */}
-      <Layout>
-        <h1>Hello</h1>
-        <BareInput
-          type="text"
-          value="100"
-          className="input-control"
-          onChange={() => {}}
-        />
-      </Layout>
+      <Layout></Layout>
+      <BareInput
+        type="text"
+        value="100"
+        className="input-control"
+        onchange={() => {}}
+      />
     </div>
   );
 }

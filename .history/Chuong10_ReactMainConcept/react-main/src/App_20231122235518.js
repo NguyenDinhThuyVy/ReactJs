@@ -13,13 +13,8 @@ function App() {
       {visible && <Clock />} */}
       <Layout>
         <h1>Hello</h1>
-        <BareInput
-          type="text"
-          value="100"
-          className="input-control"
-          onChange={() => {}}
-        />
       </Layout>
+      <BareInput value="100" className="input-control" onchange={() => {}} />
     </div>
   );
 }
