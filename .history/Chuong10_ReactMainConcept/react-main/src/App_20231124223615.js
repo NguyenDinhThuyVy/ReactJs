@@ -7,7 +7,6 @@ import Layout from "./Layout";
 import BareButton from "./BareButton";
 import LoginControl from "./LoginControl";
 import CorrectlyState from "./CorrectlyState";
-import ProductList from "./ProductList/ProductList";
 
 function App() {
   const [visible, setVisible] = useState(true);
@@ -26,8 +25,7 @@ function App() {
         <BareButton />
       </Layout> */}
       {/* <LoginControl /> */}
-      {/* <CorrectlyState /> */}
-      <ProductList />
+      <CorrectlyState value =100/>
     </div>
   );
 }
