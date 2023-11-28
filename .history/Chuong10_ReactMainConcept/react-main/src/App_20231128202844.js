@@ -12,8 +12,6 @@ import Form from "./Forms/Form";
 import UncontrolledComponent from "./Forms/UncontrolledComponent";
 import Calculator from "./Calculator/Calculator";
 import Inheritance from "./CompositionvsInheritance/Inheritance";
-import Composition from "./CompositionvsInheritance/Composition";
-import FilterableProductTable from "./ThinkingInReact/FilterableProductTable ";
 
 function App() {
   const [visible, setVisible] = useState(true);
@@ -36,9 +34,7 @@ function App() {
       {/* <ProductList /> */}
       {/* <Form /> */}
       {/* <UncontrolledComponent /> */}
-      {/* <Inheritance /> */}
-      {/* <Composition /> */}
-      <FilterableProductTable />
+      <Inheritance />
     </div>
   );
 }

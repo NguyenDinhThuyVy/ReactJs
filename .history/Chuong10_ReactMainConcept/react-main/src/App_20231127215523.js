@@ -8,12 +8,6 @@ import BareButton from "./BareButton";
 import LoginControl from "./LoginControl";
 import CorrectlyState from "./CorrectlyState";
 import ProductList from "./ProductList/ProductList";
-import Form from "./Forms/Form";
-import UncontrolledComponent from "./Forms/UncontrolledComponent";
-import Calculator from "./Calculator/Calculator";
-import Inheritance from "./CompositionvsInheritance/Inheritance";
-import Composition from "./CompositionvsInheritance/Composition";
-import FilterableProductTable from "./ThinkingInReact/FilterableProductTable ";
 
 function App() {
   const [visible, setVisible] = useState(true);
@@ -34,11 +28,7 @@ function App() {
       {/* <LoginControl /> */}
       {/* <CorrectlyState /> */}
       {/* <ProductList /> */}
-      {/* <Form /> */}
-      {/* <UncontrolledComponent /> */}
-      {/* <Inheritance /> */}
-      {/* <Composition /> */}
-      <FilterableProductTable />
+      <Form></Form>
     </div>
   );
 }
