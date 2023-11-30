@@ -4,7 +4,6 @@ import UserClassComponent from "./User.class";
 import User from "./User";
 import { useState } from "react";
 import Cart from "./Header/Cart";
-import Navigation from "./Header/Navigation";
 
 function App() {
   const [isShow, setIsShow] = useState(true);
@@ -15,7 +14,6 @@ function App() {
         Change is Show
       </button>{" "} */}
       <Cart />
-      <Navigation />
     </div>
   );
 }
