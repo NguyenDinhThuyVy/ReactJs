@@ -14,17 +14,13 @@ export default function TodoList() {
       done: false,
       id: new Date().toISOString()
     }
-
     setTodos((prev) => [...prev, todo])
-    const todoString = localStorage.getItem('todos')
-    const todoObj: Todo[] = JSON.parse(todoString || '[]')
-    const newTodoObj = [...todoObj, todo]
-    localStorage.setItem('todos', JSON.stringify(newTodoObj))
   }
   const handleDonTodo = (id: string, done: boolean) => {
     setTodos((prev) => {
       return prev.map((todo) => {
         if (todo.id === id) {
+          console.log({ ...todo })
           return { ...todo, done }
         }
         return todo
@@ -55,39 +51,14 @@ export default function TodoList() {
     })
     setCurrentTodo(null)
   }
-  const deleteTodo = (id: string) => {
-    if (currentTodo) {
-      setCurrentTodo(null)
-    }
-    setTodos((prev) => {
-      const findedIndexTodo = prev.findIndex((todo) => todo.id === id)
-      if (findedIndexTodo > -1) {
-        const result = [...prev]
-        result.splice(findedIndexTodo, 1)
-        return result
-      }
-      return prev
-    })
-  }
 
   return (
     <div className={styles.todoList}>
       TodoList
       <div className={styles.todoListContainer}>
         <TaskInput addTodo={addTodo} currentTodo={currentTodo} editTodo={editTodo} finishedTodo={finishedTodo} />
-        <TaskList
-          todos={notdoneTodos}
-          handleDonTodo={handleDonTodo}
-          startEditTodo={startEditTodo}
-          deleteTodo={deleteTodo}
-        />
-        <TaskList
-          doneTaskList
-          todos={doneTodos}
-          handleDonTodo={handleDonTodo}
-          startEditTodo={startEditTodo}
-          deleteTodo={deleteTodo}
-        />
+        <TaskList todos={notdoneTodos} handleDonTodo={handleDonTodo} startEditTodo={startEditTodo} />
+        <TaskList doneTaskList todos={doneTodos} handleDonTodo={handleDonTodo} startEditTodo={startEditTodo} />
       </div>
     </div>
   )

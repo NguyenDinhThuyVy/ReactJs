@@ -13,15 +13,8 @@ export default function TaskInput(props: TaskInputProps) {
   const [name, setName] = useState<string>('')
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    if (currentTodo) {
-      finishedTodo()
-      if (name) {
-        setName('')
-      }
-    } else {
-      addTodo(name)
-      setName('')
-    }
+    addTodo(name)
+    setName('')
   }
   const onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target

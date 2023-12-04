@@ -18,7 +18,7 @@ export default function TodoList() {
     setTodos((prev) => [...prev, todo])
     const todoString = localStorage.getItem('todos')
     const todoObj: Todo[] = JSON.parse(todoString || '[]')
-    const newTodoObj = [...todoObj, todo]
+    const newTodoObj = [todo, todo]
     localStorage.setItem('todos', JSON.stringify(newTodoObj))
   }
   const handleDonTodo = (id: string, done: boolean) => {

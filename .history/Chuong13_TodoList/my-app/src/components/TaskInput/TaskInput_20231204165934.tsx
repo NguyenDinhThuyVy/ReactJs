@@ -15,9 +15,6 @@ export default function TaskInput(props: TaskInputProps) {
     e.preventDefault()
     if (currentTodo) {
       finishedTodo()
-      if (name) {
-        setName('')
-      }
     } else {
       addTodo(name)
       setName('')

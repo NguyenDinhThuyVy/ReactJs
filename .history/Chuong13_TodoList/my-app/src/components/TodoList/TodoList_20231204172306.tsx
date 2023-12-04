@@ -14,17 +14,13 @@ export default function TodoList() {
       done: false,
       id: new Date().toISOString()
     }
-
     setTodos((prev) => [...prev, todo])
-    const todoString = localStorage.getItem('todos')
-    const todoObj: Todo[] = JSON.parse(todoString || '[]')
-    const newTodoObj = [...todoObj, todo]
-    localStorage.setItem('todos', JSON.stringify(newTodoObj))
   }
   const handleDonTodo = (id: string, done: boolean) => {
     setTodos((prev) => {
       return prev.map((todo) => {
         if (todo.id === id) {
+          console.log({ ...todo })
           return { ...todo, done }
         }
         return todo
