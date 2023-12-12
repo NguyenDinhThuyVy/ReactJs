@@ -76,17 +76,21 @@ export default function TodoList() {
     if (currentTodo) {
       setCurrentTodo(null)
     }
-    const handler = (todoObj: Todo[]) => {
-      const findedIndexTodo = todoObj.findIndex((todo) => todo.id === id)
-      if (findedIndexTodo > -1) {
-        const result = [...todoObj]
-        result.splice(findedIndexTodo, 1)
-        return result
+    setTodos((prev) => {
+      if (currentTodo) {
+        setCurrentTodo(null)
       }
-      return todoObj
-    }
-    setTodos(handler)
-    syncReactToLocal(handler)
+      const handler = (todoObj: Todo[]) => {
+        const findedIndexTodo = todoObj.findIndex((todo) => todo.id === id)
+        if (findedIndexTodo > -1) {
+          const result = [...todoObj]
+          result.splice(findedIndexTodo, 1)
+          return result
+        }
+        return todoObj
+      }
+      setTodos(handler)
+      syncReactToLocal(handler)
   }
 
   return (

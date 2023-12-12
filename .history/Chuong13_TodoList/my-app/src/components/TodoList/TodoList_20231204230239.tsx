@@ -53,6 +53,14 @@ export default function TodoList() {
       setCurrentTodo(findedTodo)
     }
   }
+
+  const editTodo = (name: string) => {
+    setCurrentTodo((prev) => {
+      if (prev) return { ...prev, name }
+      return null
+    })
+  }
+
   const editTodo = (name: string) => {
     setCurrentTodo((prev) => {
       if (prev) return { ...prev, name }
@@ -60,33 +68,29 @@ export default function TodoList() {
     })
   }
   const finishedTodo = () => {
-    const handler = (todoObj: Todo[]) => {
-      return todoObj.map((todo) => {
-        if (todo.id === (currentTodo as Todo).id) {
-          return currentTodo as Todo
+    setTodos((prev) => {
+      return prev.map((todo) => {
+        if (todo.id === currentTodo?.id) {
+          return currentTodo
         }
         return todo
       })
-    }
-    setTodos(handler)
+    })
     setCurrentTodo(null)
-    syncReactToLocal(handler)
   }
   const deleteTodo = (id: string) => {
     if (currentTodo) {
       setCurrentTodo(null)
     }
-    const handler = (todoObj: Todo[]) => {
-      const findedIndexTodo = todoObj.findIndex((todo) => todo.id === id)
+    setTodos((prev) => {
+      const findedIndexTodo = prev.findIndex((todo) => todo.id === id)
       if (findedIndexTodo > -1) {
-        const result = [...todoObj]
+        const result = [...prev]
         result.splice(findedIndexTodo, 1)
         return result
       }
-      return todoObj
-    }
-    setTodos(handler)
-    syncReactToLocal(handler)
+      return prev
+    })
   }
 
   return (
